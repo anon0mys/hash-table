@@ -36,6 +36,10 @@ class HashTable
   private
 
     def key_hasher(key)
-      key.sum % 10
+      hashed = key.sum % 10
+      until hashed < 10
+        hashed /= 10
+      end
+      hashed
     end
 end
