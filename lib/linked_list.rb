@@ -24,4 +24,17 @@ class LinkedList
       @child.find(key)
     end
   end
+
+  def list_keys(result = "")
+    if result == ""
+      result += "#{@key}"
+    else
+      result += ",#{@key}"
+    end
+    if @child
+      @child.list_keys(result)
+    else
+      result
+    end
+  end
 end

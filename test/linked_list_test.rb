@@ -44,4 +44,13 @@ class LinkedListTest < Minitest::Test
 
     assert_equal 'Second', list.find('key2').value
   end
+
+  def test_it_can_print_all_keys_in_list
+    list = LinkedList.new('key1', 'First')
+
+    list.insert('key2', 'Second')
+    list.insert('key3', 'Third')
+
+    assert_equal 'key1,key2,key3', list.list_keys
+  end
 end
